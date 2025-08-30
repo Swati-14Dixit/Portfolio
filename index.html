@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swati's Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="preloader">
+    <div class="animation-container">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="preloader-text">
+      Turning Data into Insight...
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">My Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section id="about" class="py-5 text-center">
+    <div class="container">
+      <div class="intro-text-wrapper">
+        <h1 class="my-name-animation">Swati Dixit</h1>
+        <p class="my-domain-animation">Data Scientist</p>
+      </div>
+      <div class="blue-transparent-box">
+        <img src="images/about.jpg" alt="Swati Dixit - Data Scientist Profile Picture" class="about-img mb-4" />
+        <div class="about-text">
+          <p class="about-p-1 text-center">
+            As a B.Tech graduate in <strong>Artificial Intelligence</strong>, I don't just process numbers—I translate complex data into <strong>decisive, strategic action</strong>.
+          </p>
+          <p class="about-p-2 text-center">
+            During an immersive <strong>Deloitte</strong> simulation, I moved beyond theory, tackling real-world business challenges to uncover the critical insights that <strong>drive growth and innovation</strong>. I am ready to build the future, one data point at a time.
+          </p>
+          <div class="mt-4">
+            <a href="images/DA Resume.pdf" class="btn btn-primary" download>Download Resume</a>
+            <a href="images/DA Resume.pdf" class="btn btn-secondary" target="_blank">View Resume</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="project-showcase-container">
+      <button id="show-project-btn" class="cta-button">Explore My Latest Work</button>
+    </div>
+  
+    <div id="project-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Hey there! 👋</h2>
+        <p>Want a sneak peek at my latest project in progress? I'm currently building a smart <strong>Expense Tracker</strong>.</p>
+        <p class="project-description">
+          It's a web application designed to help you effortlessly manage finances. Using data visualization, it will provide clear insights into spending habits, making budgeting simple and intuitive.
+        </p>
+          <a href="https://expense-tracker-datascience.streamlit.app" target="_blank" rel="noopener noreferrer" class="project-link">View Live &rarr;</a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="projects" class="py-5 text-center">
+    <div class="container">
+      <h2 class="mb-5">Projects</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-4 project-card">
+          <div class="card h-100">
+            <img src="images/projects/1.jpg" class="card-img-top" alt="Project 1">
+            <div class="card-body">
+              <h5 class="card-title">AI Voice Agent</h5>
+              <p class="card-text">A simple AI voice assistant built using FastAPI and the DialoGPT model for natural language processing. This project implements a voice assistant that converts text input to speech. It includes DialoGPT and uvicorn for faster content loading and also Docker implementation. </p>
+              <a href="https://github.com/Swati-14Dixit/AI-VOICE-AGENT" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">Source Code</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 project-card">
+          <div class="card h-100">
+            <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2">
+            <div class="card-body">
+              <h5 class="card-title">Facebook Live Sellers' Engagement Analysis</h5>
+              <p class="card-text">This project analyzes how the time of uploading Facebook Live posts influences user engagement — measured in reactions, comments, and shares. The dataset includes over 7,000 posts by fashion and cosmetics sellers in Thailand.</p>
+              <a href="https://github.com/Swati-14Dixit/Facebook" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">Source Code</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 project-card">
+          <div class="card h-100">
+            <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3">
+            <div class="card-body">
+              <h5 class="card-title">🍷 Wine Quality Analysis</h5>
+              <p class="card-text">A complete end-to-end analysis of red wine quality based on physicochemical properties using Python. This project includes data exploration, correlation analysis, visualization, and wine quality prediction using machine learning models. It's proven for efficient and provides accuracy over 90%.</p>
+              <a href="https://github.com/Swati-14Dixit/Winedata" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="py-5 text-center">
+    <div class="container">
+      <h2 class="mb-5">Skills</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-3 skill-card">
+          <div class="card h-100">
+            <div class="card-body">
+              <img src="images/skills/6.jpg" alt="Python" class="mb-3 d-block" />
+              <h5 class="card-title">Python</h5>
+              <p class="card-text"><strong>HackerRank</strong> Basic Certification - Proficient in Python programming with strong problem-solving skills.</p>
+              <a href="https://www.hackerrank.com/certificates/c696fdaa787f" target="_blank" rel="noopener noreferrer" class="btn btn-link">View Certification</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 skill-card">
+          <div class="card h-100">
+            <div class="card-body">
+              <img src="images/skills/5.png" alt="Data Analytics" class="mb-3 d-block" />
+              <h5 class="card-title">Data Analytics</h5>
+              <p class="card-text">Skilled in data analysis, statistical modeling, and deriving insights from complex datasets. Completed <strong>Deloitte</strong> job simulation.</p>
+              <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_BjNNeeKvrirYJm8LE_1752046434916_completion_certificate.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-link">View Certification</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 skill-card">
+          <div class="card h-100">
+            <div class="card-body">
+              <img src="images/skills/4.jpg" alt="Data Science" class="mb-3 d-block" />
+              <h5 class="card-title">Data Science</h5>
+              <p class="card-text"><strong>IBM</strong> Data Science Certification - Expertise in machine learning, predictive modeling, and data-driven decision making.</p>
+              <a href="https://courses.cognitiveclass.ai/certificates/e2236e0ba3d048d983dad811d423fbd8" target="_blank" rel="noopener noreferrer" class="btn btn-link">View Certification</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 skill-card data-engineering">
+          <div class="card h-100">
+            <div class="card-body">
+              <img src="images/skills/7.png" alt="Data Engineering" class="mb-3 d-block" />
+              <h5 class="card-title">Data Engineering</h5>
+              <p class="card-text"><strong>Google Cloud</strong> Professional Data Engineer Certification - Expertise in building and maintaining data processing systems on Google Cloud Platform.</p>
+              <a href="https://www.cloudskillsboost.google/public_profiles/6f2bba0e-e24c-4ecd-975a-09dc54e821aa/badges/13558794" target="_blank" rel="noopener noreferrer" class="btn btn-link">View Certification</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-5 text-white">
+    <div class="container text-center">
+      <h2 class="mb-5 fw-bold section-heading">Get In Touch</h2>
+      <p class="lead mb-4 contact-intro">
+        I'm actively seeking new opportunities and collaborations. Feel free to reach out!
+      </p>
+  
+      <div class="row justify-content-center mb-5 contact-info-cards">
+        <div class="col-md-5 mb-4">
+          <div class="info-card h-100 p-4 d-flex flex-column align-items-center justify-content-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon" width="40" class="mb-3 contact-icon" />
+            <h5 class="fw-bold">Email Me</h5>
+            <a href="mailto:swati4dixit@gmail.com" class="contact-detail-link">swati4dixit@gmail.com</a>
+          </div>
+        </div>
+        <div class="col-md-5 mb-4">
+          <div class="info-card h-100 p-4 d-flex flex-column align-items-center justify-content-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone Icon" width="40" class="mb-3 contact-icon" />
+            <h5 class="fw-bold">Call Me</h5>
+            <a href="tel:+919925185206" class="contact-detail-link">+91 9925185206</a>
+            <p class="text-muted mt-1">(Ahmedabad, Gujarat, India)</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row justify-content-center social-links-row">
+        <div class="col-auto mx-3 mb-3">
+          <a href="https://www.linkedin.com/in/swati-dixit-75583b246" target="_blank" rel="noopener noreferrer" data-bs-toggle="tooltip" title="LinkedIn">
+            <div class="social-icon-wrapper d-flex align-items-center justify-content-center">
+              <img src="images/icons/logo1.png" alt="LinkedIn" width="35" />
+            </div>
+          </a>
+        </div>
+        <div class="col-auto mx-3 mb-3">
+          <a href="https://github.com/Swati-14Dixit?tab=repositories" target="_blank" rel="noopener noreferrer" data-bs-toggle="tooltip" title="GitHub">
+            <div class="social-icon-wrapper d-flex align-items-center justify-content-center">
+              <img src="images/icons/logo2.png" alt="GitHub" width="35" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

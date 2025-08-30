@@ -1,0 +1,749 @@
+/* ========== Welcome Splash Screen & Animation ========== */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--background-dark) 0%, #2a2a40 100%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.animation-container {
+  position: relative;
+  width: 220px;
+  height: 120px;
+  margin-bottom: 2.5rem;
+}
+
+.dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  opacity: 0;
+  animation: dataStory 2.8s ease-in-out forwards;
+  filter: drop-shadow(0 0 5px var(--primary-color));
+}
+
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.15s; }
+.dot:nth-child(3) { animation-delay: 0.3s; }
+.dot:nth-child(4) { animation-delay: 0.45s; }
+.dot:nth-child(5) { animation-delay: 0.6s; }
+.dot:nth-child(6) { animation-delay: 0.75s; }
+.dot:nth-child(7) { animation-delay: 0.9s; }
+
+.preloader-text {
+  color: var(--text-heading);
+  font-size: 1.5rem;
+  font-weight: 500;
+  opacity: 0;
+  animation: textFadeIn 2s ease-out 1s forwards;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes dataStory {
+  0% { opacity: 0.5; transform: translate(100px, 50px) scale(0.5); background-color: var(--text-light); }
+  25% { opacity: 0.7; transform: translate(var(--x-random), var(--y-random)) scale(0.8); }
+  100% { opacity: 1; transform: translate(var(--x-final), var(--y-final)) scale(1); background-color: var(--primary-color); box-shadow: 0 0 15px var(--primary-color); }
+}
+
+.dot:nth-child(1) { --x-random: 20px; --y-random: 80px; --x-final: 0px; --y-final: 70px; }
+.dot:nth-child(2) { --x-random: 180px; --y-random: 20px; --x-final: 30px; --y-final: 60px; }
+.dot:nth-child(3) { --x-random: 50px; --y-random: 10px; --x-final: 60px; --y-final: 55px; }
+.dot:nth-child(4) { --x-random: 150px; --y-random: 90px; --x-final: 90px; --y-final: 40px; }
+.dot:nth-child(5) { --x-random: 10px; --y-random: 50px; --x-final: 120px; --y-final: 35px; }
+.dot:nth-child(6) { --x-random: 190px; --y-random: 60px; --x-final: 150px; --y-final: 20px; }
+.dot:nth-child(7) { --x-random: 80px; --y-random: 0px; --x-final: 180px; --y-final: 10px; }
+
+@keyframes textFadeIn { 
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Base styles */
+:root {
+  --primary-color: #00bcd4; /* A tech-inspired cyan */
+  --secondary-color: #ff4081; /* A vibrant pink for highlights */
+  --background-dark: #1e1e2d; /* A deep, professional blue-gray */
+  --background-card: #2c2c44; /* Slightly lighter for cards */
+  --text-light: #e0e0e0; /* Light gray for body text */
+  --text-heading: #ffffff; /* White for headings */
+  --border-radius: 10px;
+}
+
+/* Highlighting name and domain */
+.my-name-animation {
+  color: var(--secondary-color);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.my-domain-animation {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Universal box-sizing for consistent layout */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+}
+
+body {
+  /* Default background, will be replaced by JS */
+  background-color: var(--background-dark); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keeps background fixed during scroll */
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  transition: background-image 1s ease-in-out; /* Smooth transition for background image */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading);
+  font-weight: 600;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: rgba(44, 44, 68, 0.8) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+  border-bottom: 2px solid var(--primary-color);
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-weight: 800;
+  color: var(--text-heading) !important;
+}
+
+.nav-link {
+  color: var(--text-light) !important;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+#hero {
+  background: linear-gradient(rgba(30, 30, 45, 0.8), rgba(30, 30, 45, 0.8)), url('https://images.unsplash.com/photo-1510519138101-570d1d63d507') no-repeat center center/cover;
+}
+
+.hero-heading {
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-subheading {
+  font-size: 1.8rem;
+  animation: fadeIn 1s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Sections */
+section {
+  padding: 5rem 0;
+}
+
+.section-heading {
+    color: var(--primary-color);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+#about, #skills {
+  background-color: var(--background-dark);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+}
+
+#projects, #contact, footer {
+  background-color: var(--background-card);
+}
+
+/* About Section */
+.intro-text-wrapper {
+    margin-bottom: 2rem;
+}
+
+.about-text {
+    display: block; /* Change to block to stack paragraphs */
+    text-align: center; /* Center text */
+}
+
+h1.my-name-animation {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-heading);
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+p.my-domain-animation {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-top: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition-delay: 0.2s;
+}
+
+.about-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 0 15px var(--primary-color);
+}
+
+.about-text {
+  max-width: 700px;
+  margin: auto;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateX(-50px) translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.about-text .about-p-1.in-view {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    transition-delay: 0.4s; /* Starts after name/domain animation */
+}
+
+.about-text .about-p-2.in-view {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    transition-delay: 0.8s; /* Starts after the first paragraph */
+    animation: fadeInUp 0.8s ease-out; /* New animation */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.highlight {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.text-secondary-highlight {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/* Card Styling (Skills & Projects) */
+.highlight {
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+.card {
+  background-color: var(--background-card);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Project Cards */
+.project-card .card-img-top {
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  margin-bottom: 1rem; /* Add gap below image */
+}
+
+.project-card .card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin-bottom: 1rem; /* Add gap below card body */
+}
+
+/* Add gap between project cards in mobile view */
+@media (max-width: 767px) {
+  .project-card {
+    margin-bottom: 1.5rem;
+  }
+  .skill-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.project-card .card-title {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+}
+
+.project-card .card-text {
+  flex-grow: 1;
+  color: var(--text-light);
+}
+
+.btn-outline-secondary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: var(--border-radius);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--text-heading);
+}
+
+/* Skill Cards */
+.skill-card .card-body {
+  padding: 1.5rem;
+}
+
+.skill-card img {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  object-fit: contain;
+}
+
+.skill-card .card-title {
+  color: var(--primary-color);
+}
+
+.skill-card .card-text {
+    color: var(--text-light);
+}
+
+/* Add blue border and styling to all skill cards */
+.skill-card .card {
+  border: 2px solid #006699; /* IBM Blue */
+  background: linear-gradient(135deg, var(--background-card) 0%, #003366 100%);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card .card:hover {
+  border-color: #0099cc; /* Lighter IBM Blue on hover */
+  box-shadow: 0 10px 25px rgba(0, 102, 153, 0.4);
+}
+
+.skill-card .card-title {
+  color: #006699; /* IBM Blue */
+  font-weight: 600;
+}
+
+.skill-card .card-text strong {
+  color: #34A853; /* Green for emphasis */
+}
+
+/* Highlight HackerRank, Deloitte, IBM certifications in green */
+.skill-card:nth-child(1) .card-text strong,
+.skill-card:nth-child(2) .card-text strong {
+  color: #34A853; /* Google Green */
+}
+
+.skill-card:nth-child(3) .card-text strong {
+  color: #34A853; /* Google Green */
+}
+
+/* Data Science specific styling with IBM theme */
+.skill-card.ibm-theme .card {
+  border: 2px solid #006699; /* IBM Blue */
+  background: linear-gradient(135deg, var(--background-card) 0%, #003366 100%);
+}
+
+.skill-card.ibm-theme .card:hover {
+  border-color: #0099cc; /* Lighter IBM Blue on hover */
+  box-shadow: 0 10px 25px rgba(0, 102, 153, 0.4);
+}
+
+.skill-card.ibm-theme .card-title {
+  color: #006699; /* IBM Blue */
+  font-weight: 600;
+}
+
+.skill-card:nth-child(3) .btn-link {
+  border: none;
+  padding: 0;
+  color: #34A853; /* Green text */
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.skill-card:nth-child(3) .btn-link:hover {
+  color: #2a7a2a; /* Darker green on hover */
+  text-decoration: underline;
+}
+
+/* Remove border box for View Certification buttons in Data Engineering and others */
+.skill-card:nth-child(1) .btn-link,
+.skill-card:nth-child(2) .btn-link,
+.skill-card.data-engineering .btn-link {
+  border: none;
+  padding: 0;
+  color: #34A853; /* Green text */
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.skill-card:nth-child(1) .btn-link:hover,
+.skill-card:nth-child(2) .btn-link:hover,
+.skill-card.data-engineering .btn-link:hover {
+  color: #2a7a2a; /* Darker green on hover */
+  text-decoration: underline;
+}
+
+/* Contact Section */
+#contact {
+  border-top: 2px solid var(--primary-color);
+  padding-bottom: 1rem; /* Reduced padding for minimal height */
+}
+
+#contact h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem; /* Add some spacing below heading */
+}
+
+.social-icon-wrapper {
+    width: 50px; /* Reduced size */
+    height: 50px; /* Reduced size */
+    margin: 0 5px; /* Reduced margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent; /* Removed background box */
+    border-radius: 50%;
+    box-shadow: none; /* Removed shadow */
+}
+
+.social-icon-wrapper:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px var(--primary-color);
+}
+
+.contact-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--text-light);
+}
+
+/* ========== New Interactive Section Styles ========== */
+
+/* This is the new full-width container for the button */
+.project-showcase-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 60vh; /* Increased height to cover more area with background image */
+  padding: 40px 20px;
+  box-sizing: border-box;
+  background-color: transparent; /* Changed to transparent to show background image */
+}
+
+/* Styling for the new call-to-action button */
+.cta-button {
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text-heading);
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3); /* Shadow using your primary color */
+}
+
+.cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 64, 129, 0.4); /* Shadow using your secondary color */
+}
+
+
+/* ========== Modal (Popup) Styles ========== */
+
+/* The modal background overlay */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1001; /* Higher z-index than navbar */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 45, 0.7); /* Uses your dark background with transparency */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: fadeIn 0.4s ease-out; /* Uses your existing fadeIn animation */
+}
+
+/* The modal content box */
+.modal-content {
+  position: relative;
+  background-color: var(--background-card); /* Uses your card background color */
+  color: var(--text-light);
+  margin: 15% auto;
+  padding: 35px;
+  border: 1px solid var(--primary-color);
+  width: 90%;
+  max-width: 550px;
+  border-radius: var(--border-radius); /* Uses your border-radius variable */
+  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+  animation: slideIn 0.5s ease-out;
+}
+
+/* The close button (X) */
+.close-button {
+  color: #aaa;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: var(--secondary-color); /* Uses your highlight color on hover */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal specific text and link styling */
+.modal-content h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.project-description {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  color: var(--text-heading);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-heading);
+  transform: scale(1.05);
+}
+
+/* A new animation for the modal's entrance */
+@keyframes slideIn {
+  from {
+      transform: translateY(-60px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Contact Section Enhancements */
+#contact {
+  background-color: var(--background-card); /* Ensure consistency */
+  border-top: 2px solid var(--primary-color);
+  padding-bottom: 3rem; /* Add some extra padding for spacing */
+}
+
+#contact .section-heading {
+  color: var(--primary-color);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.contact-intro {
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+  font-size: 1.15rem;
+}
+
+.contact-info-cards {
+  margin-bottom: 3rem !important; /* Override Bootstrap default */
+}
+
+.info-card {
+  background-color: var(--background-dark);
+  border: 1px solid rgba(0, 188, 212, 0.3); /* Lighter border */
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-light);
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 188, 212, 0.6);
+}
+
+.info-card h5 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.contact-icon {
+  filter: drop-shadow(0 0 5px var(--primary-color));
+}
+
+.contact-detail-link {
+  color: var(--text-light);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-detail-link:hover {
+  color: var(--secondary-color);
+}
+
+.social-links-row {
+  margin-top: 2rem;
+}
+
+/* Tooltip styles for social icons */
+.tooltip-inner {
+    background-color: var(--background-card);
+    color: var(--text-light);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+}
+
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: var(--primary-color);
+}
+
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: var(--primary-color);
+}
+
+/* Blue Transparent Box for About Section */
+.blue-transparent-box {
+  background-color: rgba(0, 123, 255, 0.2); /* Blue with transparency */
+  border-radius: 20px;
+  padding: 1.5rem 2rem; /* Reduced padding top and bottom */
+  margin: 1rem 0; /* Reduced margin top and bottom */
+  border: 2px solid rgba(0, 123, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 123, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+}
+
+/* Increase About Section Size */
+#about {
+  padding: 6rem 0; /* Increased padding for larger section */
+}
+
+/* Increase font sizes for better visibility */
+.my-name-animation {
+  font-size: 4rem !important; /* Increased from 3.5rem */
+}
+
+.my-domain-animation {
+  font-size: 2.2rem !important; /* Increased from 1.8rem */
+}
+
+.about-text p {
+  font-size: 1.3rem !important; /* Increased from 1.1rem */
+  line-height: 1.8;
+}
+
+.about-img {
+  width: 180px !important; /* Increased from 150px */
+  height: 180px !important; /* Increased from 150px */
+  border-width: 5px !important; /* Increased border width */
+  box-shadow: 0 0 20px var(--primary-color) !important; /* Enhanced shadow */
+}
