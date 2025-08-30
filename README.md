@@ -69,7 +69,7 @@ or
 On VS Code - Go Live
 # Open http://localhost:8000
 ```
-## Option 2: Streamlit App
+## Streamlit App
 ```bash
 # Install dependencies
 pip install -r requirements.txt
