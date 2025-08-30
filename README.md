@@ -61,29 +61,12 @@ Portfolio/
 └── README.md           # This file
 ```
 
-## 🌐 GitHub Upload Instructions
-
-### Method 1: Direct Upload
-1. Create repository named `portfolio` on GitHub
-2. Click "Add file" → "Upload files"
-3. Upload all files maintaining exact folder structure
-4. Upload `index.html`, `style.css`, `script.js` first
-5. Upload complete `images` folder with subfolders
-
-### Method 2: Git Commands
-```bash
-git init
-git add .
-git commit -m "Portfolio deployment"
-git remote add origin https://github.com/your-username/portfolio.git
-git branch -M main
-git push -u origin main
-```
-
 ## 🚀 Run Locally
 ```bash
 # Start local server
 python -m http.server 8000
+or
+On VS Code - Go Live
 # Open http://localhost:8000
 ```
 
@@ -99,11 +82,11 @@ python -m http.server 8000
 - Data Engineering (Google Cloud)
 
 ## 📞 Contact
-- **Email**: swati4dixit@gmail.com
-- **Phone**: +91 9925185206
-- **Location**: Ahmedabad, India
-- **LinkedIn**: /in/swati-dixit-75583b246
-- **GitHub**: Swati-14Dixit
+- **Email**: abc@gmail.com
+- **Phone**: +91 (**********)
+- **Location**: Add location
+- **LinkedIn**: https//
+- **GitHub**: www//
 
 ---
 
