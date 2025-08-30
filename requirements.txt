@@ -1,0 +1,9 @@
+# Requirements for data science projects featured in the portfolio
+
+fastapi>=0.95.0
+uvicorn>=0.22.0
+transformers>=4.30.0
+scikit-learn>=1.2.2
+pandas>=2.0.1
+matplotlib>=3.7.1
+seaborn>=0.12.2
