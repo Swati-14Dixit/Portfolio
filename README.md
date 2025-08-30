@@ -69,6 +69,15 @@ or
 On VS Code - Go Live
 # Open http://localhost:8000
 ```
+## Option 2: Streamlit App
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run Streamlit app
+streamlit run streamlit_app.py
+# Open http://localhost:8501
+```
 
 ## 📊 Projects
 - **AI Voice Agent**: FastAPI, DialoGPT, Docker
